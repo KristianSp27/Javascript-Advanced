@@ -1,14 +1,9 @@
-function gatherListItems() {
-  let list = document.getElementById("myList");
-  let textarea = document.getElementById("outputText");
+function extractText() {
+  const list = document.getElementById("items");
+  const items = Array.from(list.children);
 
-  let listItems = list.getElementsByTagName("li");
+  const result = items.map((li) => li.textContent).join("\n");
 
-  let listText = "";
-
-  for (let i = 0; i < listItems.length; i++) {
-    listText += listItems[i].textContent + "\n";
-  }
-
-  textarea.value = listText;
+  const output = document.getElementById("result");
+  output.value = result;
 }
