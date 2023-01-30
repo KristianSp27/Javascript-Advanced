@@ -3,7 +3,7 @@ function toggle() {
   const extraDiv = document.getElementById("extra");
 
   if (button.textContent === "More") {
-    button.textContent === "Less";
+    button.textContent = "Less";
     extraDiv.style.display = "block";
   } else {
     button.textContent = "More";
