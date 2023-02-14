@@ -1,14 +1,14 @@
-function sortAlternating(numbers) {
-  numbers.sort((a, b) => a - b);
-  let result = [];
+function sortingNumbers(array) {
+  const sortedArray = array.sort((a, b) => b - a);
 
-  for (let i = 0; i < numbers.length / 2; i++) {
-    result[i * 2] = numbers[i];
-    result[i * 2 + 1] = numbers[numbers.length - i - 1];
-  }
+  const result = [];
 
-  if (numbers.length % 2 !== 0) {
-    result.push(numbers[Math.floor(numbers.length / 2)]);
+  while (sortedArray.length > 0) {
+    result.push(sortedArray.pop());
+
+    if (sortedArray.length > 0) {
+      result.push(sortedArray.shift());
+    }
   }
 
   return result;
